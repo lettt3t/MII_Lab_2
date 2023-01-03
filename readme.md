@@ -8,5 +8,5 @@
 
 Формируется матрица F следующим образом: скопировать в нее А и если А симметрична относительно побочной диагонали, то поменять местами симметрично В и  D, иначе D и Е поменять местами несимметрично. При этом матрица А не меняется. После чего если определитель матрицы А больше суммы диагональных элементов матрицы F, то вычисляется выражение: A-1*AT – K * F-1, иначе вычисляется выражение (AТ +G-FТ)*K, где G-нижняя треугольная матрица, полученная из А. Выводятся по мере формирования А, F и все матричные операции последовательно.
 ### Результат программы:
-[![res1](res1 "res1")](https://raw.githubusercontent.com/lettt3t/MII_Lab_2/main/screenshot's/res.PNG "res1")
-[![res2](res2 "res2")](https://github.com/lettt3t/MII_Lab_2/blob/main/screenshot's/res1.PNG "res2")
+<a href="https://ibb.co/3y991Pz"><img src="https://i.ibb.co/TBxxcNL/res.png" alt="res" border="0"></a>
+<a href="https://ibb.co/bbhf6sn"><img src="https://i.ibb.co/SfTL6tp/res1.png" alt="res1" border="0"></a>
