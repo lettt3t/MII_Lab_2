@@ -1,14 +1,10 @@
-import random
 import numpy as numpic
-import csv
 import random
-import statistics
-import pandas
 import matplotlib.pyplot as py
 def resualt_recoid_txt(arr_strings):
         arr_strings = list()
         with open("resualt.txt","w") as file:
-            file.write(arr_strings)   
+            file.write(arr_strings)
 try:
     def graph(array,pod_matr,pl_1,pl_2,pl_3):
         py.subplot(pl_1,pl_2,pl_3)
@@ -21,16 +17,16 @@ except:
     print("График не сработал...")
 
 try:
-    def matrix_print(e_mat,b_mat,d_mat,c_mat):
+    def matrix_print(e,b,d,c):
         print ("=====================")
         print("Подматрица e")
-        print(e_mat)
+        print(e)
         print("Подматрица b")
-        print(b_mat)
+        print(b)
         print("Подматрица d")
-        print(d_mat)
+        print(d)
         print("Подматрица c")
-        print(c_mat)
+        print(c)
         print ("=====================")
 except:
     print("Не могу вывести подматрицы..")
@@ -38,11 +34,14 @@ except:
 try:
     print("Введите множитель")
     k = int(input())
-    print("Требуется ввести разменость начальной матрицы:")
-    n = int(input())
-    a = numpic.array([[random.randint(2-10, 10) for j in range(n)] for i in range(n)])
-    print("Матрица A")
-    print(a)
+    if (k %  2 == 0):
+        print("Требуется ввести разменость начальной матрицы:")
+        n = int(input())
+        a = numpic.array([[random.randint(2-10, 10) for j in range(n)] for i in range(n)])
+        print("Матрица A")
+        print(a)
+    else:
+        print("Стоит попробовать снова! (нечетн)")
 except:
     print("Стоит попробовать снова!")
 
@@ -57,11 +56,12 @@ firstpart = numpic.tril(a, k=0)
 secondpart = numpic.tril(a.transpose(), k=0)
 test = (firstpart==secondpart).all()
 if (test):
-    e_mat = numpic.flipud(a[n // 2:, 0:n // 2])
     b_mat = numpic.flipud(a[0: n // 2, 0: n // 2])
-else:
     d_mat = a[n // 2:, 0:n // 2]
-    c_mat = a[n // 2:, n // 2:]
+else:
+    e_mat = numpic.flipud(a[n // 2:, 0:n // 2])
+    d_mat = a[n // 2:, n // 2:]
+print("Подматрицы F")
 matrix_print(e_mat,b_mat,d_mat,c_mat)
 
 f = numpic.concatenate((numpic.concatenate((b_mat, c_mat), axis=0), numpic.concatenate((d_mat, e_mat), axis=0)), axis=1);
